@@ -531,13 +531,13 @@ Transform:
   m_GameObject: {fileID: 159384230}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.2, y: 4.18, z: 0}
+  m_LocalPosition: {x: 15.2, y: 4.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1579014595}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &179617721
+--- !u!1 &167614692
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -545,29 +545,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 179617722}
+  - component: {fileID: 167614693}
+  - component: {fileID: 167614694}
   m_Layer: 0
-  m_Name: MiniPos
+  m_Name: CritterZapPool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &179617722
+--- !u!4 &167614693
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 179617721}
+  m_GameObject: {fileID: 167614692}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.2, y: 4.18, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.91003, y: 1.6038301, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 812504517}
+  m_Father: {fileID: 1924744600}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &167614694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167614692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7e83e182eea414ba2907452040e428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectPooler
+  prefap: {fileID: 3585426026640702637, guid: f3327c1710ca0e4489cc93f73f26001a, type: 3}
+  poolSize: 1
 --- !u!1 &220713208
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,15 +816,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b683a6c0c75868458119fbee6bca987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  isBoosting: 0
   moveSpeed: 2
   energy: 0
   maxEnergy: 50
-  energyRegen: 0.2
+  energyRegen: 0.05
   health: 0
   maxHealth: 2
-  destroyEffect: {fileID: 632505381996296719, guid: 3decef9986dbc794b9219a82edc0e000, type: 3}
   engineEffect: {fileID: 1337050289}
-  isBoosting: 0
 --- !u!58 &237280419
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1292,37 +1306,6 @@ Transform:
   - {fileID: 519420032}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &429322676
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 429322677}
-  m_Layer: 0
-  m_Name: MaxPos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &429322677
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429322676}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.2, y: -4.18, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 812504517}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &443188824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1531,6 +1514,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 504407762}
   m_CullTransparentMesh: 1
+--- !u!1 &508814605
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 508814606}
+  - component: {fileID: 508814607}
+  m_Layer: 0
+  m_Name: CritterBurnPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &508814606
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508814605}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.91003, y: 1.6038301, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1924744600}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &508814607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508814605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7e83e182eea414ba2907452040e428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectPooler
+  prefap: {fileID: 6332227871052092536, guid: d81b29d4dba03e145ac275ab2fd47b59, type: 3}
+  poolSize: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1693,7 +1722,7 @@ Transform:
   m_GameObject: {fileID: 535612081}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.2, y: -4.18, z: 0}
+  m_LocalPosition: {x: 15.2, y: -4.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2308,65 +2337,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 640621998}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &812504515
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 812504517}
-  - component: {fileID: 812504516}
-  m_Layer: 0
-  m_Name: CritterSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &812504516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 812504515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 303aba397b70fa847b5b1be4a82a5348, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObjectSpawner
-  minPos: {fileID: 179617722}
-  MaxPos: {fileID: 429322677}
-  waves:
-  - prefab: {fileID: 429054880974841303, guid: 9cdef52720d58504eb39d2973f31ab0a, type: 3}
-    spawnTimer: 0
-    spawnInrevale: 1
-    objectsPerWave: 3
-    spawnedObjectCounter: 0
-  - prefab: {fileID: 429054880974841303, guid: 9cdef52720d58504eb39d2973f31ab0a, type: 3}
-    spawnTimer: 0
-    spawnInrevale: 0.2
-    objectsPerWave: 3
-    spawnedObjectCounter: 0
---- !u!4 &812504517
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 812504515}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 179617722}
-  - {fileID: 429322677}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &824379113
 GameObject:
   m_ObjectHideFlags: 0
@@ -2635,6 +2605,52 @@ Transform:
   - {fileID: 953199991}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &999261258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 999261259}
+  - component: {fileID: 999261260}
+  m_Layer: 0
+  m_Name: CritterPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &999261259
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999261258}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.91003, y: 1.6038301, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1924744600}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &999261260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999261258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7e83e182eea414ba2907452040e428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectPooler
+  prefap: {fileID: 429054880974841303, guid: 9cdef52720d58504eb39d2973f31ab0a, type: 3}
+  poolSize: 5
 --- !u!1 &1032557890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2664,8 +2680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e975e38718bcb841b3fed0194415334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  worldSpeed: 2
-  boss1: {fileID: 3327836361903109440, guid: bee909202cfac214784fa2a621786f5f, type: 3}
+  worldSpeed: 1
   crittierCount: 0
 --- !u!4 &1032557892
 Transform:
@@ -2804,6 +2819,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1160596052}
   m_CullTransparentMesh: 1
+--- !u!1 &1176641561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1176641562}
+  - component: {fileID: 1176641563}
+  m_Layer: 0
+  m_Name: Boom2Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1176641562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176641561}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.91003, y: 1.6038301, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1924744600}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1176641563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176641561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7e83e182eea414ba2907452040e428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectPooler
+  prefap: {fileID: 1488545814051650389, guid: 2005b8b2095762242bd281bdbdf3046b, type: 3}
+  poolSize: 5
 --- !u!1 &1216121126
 GameObject:
   m_ObjectHideFlags: 0
@@ -8124,6 +8185,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 237280414}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!1 &1409535895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1409535896}
+  - component: {fileID: 1409535897}
+  m_Layer: 0
+  m_Name: AsteroidPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1409535896
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409535895}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.91003, y: 1.6038301, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1924744600}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1409535897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409535895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7e83e182eea414ba2907452040e428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectPooler
+  prefap: {fileID: 7069091814656217427, guid: 9b6ff33a930a4334d8e6a966f17b57b8, type: 3}
+  poolSize: 7
 --- !u!1 &1452014447
 GameObject:
   m_ObjectHideFlags: 0
@@ -8260,6 +8367,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452014447}
   m_CullTransparentMesh: 1
+--- !u!1 &1472166840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1472166841}
+  - component: {fileID: 1472166842}
+  m_Layer: 0
+  m_Name: Boom3Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1472166841
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472166840}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.20826, y: -0.81281984, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1924744600}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1472166842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472166840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7e83e182eea414ba2907452040e428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectPooler
+  prefap: {fileID: 4063671796796677673, guid: f74c38617c6897349ac8839b89223a36, type: 3}
+  poolSize: 1
 --- !u!1001 &1551505744
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8521,15 +8674,25 @@ MonoBehaviour:
   minPos: {fileID: 159384231}
   MaxPos: {fileID: 535612082}
   waves:
-  - prefab: {fileID: 7069091814656217427, guid: 9b6ff33a930a4334d8e6a966f17b57b8, type: 3}
+  - pool: {fileID: 1409535897}
     spawnTimer: 0
-    spawnInrevale: 1
-    objectsPerWave: 5
+    spawnInrevale: 0.5
+    objectsPerWave: 10
     spawnedObjectCounter: 0
-  - prefab: {fileID: 4757437313232789292, guid: 14f1735ec5c5f084e9d874afdd054df9, type: 3}
+  - pool: {fileID: 999261260}
     spawnTimer: 0
-    spawnInrevale: 1.5
-    objectsPerWave: 1
+    spawnInrevale: 0.5
+    objectsPerWave: 3
+    spawnedObjectCounter: 0
+  - pool: {fileID: 1409535897}
+    spawnTimer: 0
+    spawnInrevale: 3
+    objectsPerWave: 2
+    spawnedObjectCounter: 0
+  - pool: {fileID: 999261260}
+    spawnTimer: 0
+    spawnInrevale: 0.5
+    objectsPerWave: 3
     spawnedObjectCounter: 0
 --- !u!4 &1579014595
 Transform:
@@ -8894,6 +9057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectPooler
   prefap: {fileID: 5289906943549750799, guid: 1c6eb2a667f78a64aabc88eef6438b10, type: 3}
+  poolSize: 5
 --- !u!1 &1824698865
 GameObject:
   m_ObjectHideFlags: 0
@@ -9059,6 +9223,98 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1881289651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1881289652}
+  - component: {fileID: 1881289653}
+  m_Layer: 0
+  m_Name: Boom1Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1881289652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881289651}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.91003, y: 1.6038301, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1924744600}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1881289653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881289651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7e83e182eea414ba2907452040e428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectPooler
+  prefap: {fileID: 632505381996296719, guid: 3decef9986dbc794b9219a82edc0e000, type: 3}
+  poolSize: 1
+--- !u!1 &1919620624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1919620625}
+  - component: {fileID: 1919620626}
+  m_Layer: 0
+  m_Name: Boss1Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1919620625
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919620624}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.91003, y: 1.6038301, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1924744600}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1919620626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919620624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7e83e182eea414ba2907452040e428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectPooler
+  prefap: {fileID: 3327836361903109440, guid: bee909202cfac214784fa2a621786f5f, type: 3}
+  poolSize: 1
 --- !u!1 &1924744599
 GameObject:
   m_ObjectHideFlags: 0
@@ -9089,6 +9345,14 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1682145004}
+  - {fileID: 1409535896}
+  - {fileID: 1176641562}
+  - {fileID: 1881289652}
+  - {fileID: 999261259}
+  - {fileID: 508814606}
+  - {fileID: 167614693}
+  - {fileID: 1919620625}
+  - {fileID: 1472166841}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1987494622
@@ -10032,7 +10296,6 @@ SceneRoots:
   - {fileID: 2032646256}
   - {fileID: 1032557892}
   - {fileID: 1579014595}
-  - {fileID: 812504517}
   - {fileID: 640621998}
   - {fileID: 2039027275}
   - {fileID: 1924744600}

@@ -159,7 +159,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -203,12 +203,12 @@ TextureImporter:
       name: boom3_0
       rect:
         serializedVersion: 2
-        x: 221
-        y: 2021
-        width: 174
-        height: 204
+        x: 0
+        y: 1800
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -225,12 +225,12 @@ TextureImporter:
       name: boom3_1
       rect:
         serializedVersion: 2
-        x: 778
-        y: 1977
-        width: 258
-        height: 272
+        x: 600
+        y: 1800
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -247,12 +247,12 @@ TextureImporter:
       name: boom3_2
       rect:
         serializedVersion: 2
-        x: 1327
-        y: 1926
-        width: 360
-        height: 360
+        x: 1200
+        y: 1800
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -269,12 +269,12 @@ TextureImporter:
       name: boom3_3
       rect:
         serializedVersion: 2
-        x: 1887
-        y: 1886
-        width: 440
-        height: 440
+        x: 1800
+        y: 1800
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -291,12 +291,12 @@ TextureImporter:
       name: boom3_4
       rect:
         serializedVersion: 2
-        x: 2468
-        y: 1867
-        width: 478
-        height: 478
+        x: 2400
+        y: 1800
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -313,12 +313,12 @@ TextureImporter:
       name: boom3_5
       rect:
         serializedVersion: 2
-        x: 68
-        y: 1267
-        width: 478
-        height: 477
+        x: 0
+        y: 1200
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -335,12 +335,12 @@ TextureImporter:
       name: boom3_6
       rect:
         serializedVersion: 2
-        x: 668
-        y: 1267
-        width: 478
-        height: 477
+        x: 600
+        y: 1200
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -357,12 +357,12 @@ TextureImporter:
       name: boom3_7
       rect:
         serializedVersion: 2
-        x: 1268
-        y: 1267
-        width: 478
-        height: 477
+        x: 1200
+        y: 1200
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -379,12 +379,12 @@ TextureImporter:
       name: boom3_8
       rect:
         serializedVersion: 2
-        x: 1868
-        y: 1267
-        width: 478
-        height: 477
+        x: 1800
+        y: 1200
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -401,12 +401,12 @@ TextureImporter:
       name: boom3_9
       rect:
         serializedVersion: 2
-        x: 2468
-        y: 1267
-        width: 478
-        height: 477
+        x: 2400
+        y: 1200
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -423,12 +423,12 @@ TextureImporter:
       name: boom3_10
       rect:
         serializedVersion: 2
-        x: 65
-        y: 676
-        width: 472
-        height: 459
+        x: 0
+        y: 600
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -445,12 +445,12 @@ TextureImporter:
       name: boom3_11
       rect:
         serializedVersion: 2
-        x: 659
-        y: 676
-        width: 478
-        height: 463
+        x: 600
+        y: 600
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -467,12 +467,12 @@ TextureImporter:
       name: boom3_12
       rect:
         serializedVersion: 2
-        x: 1256
-        y: 685
-        width: 474
-        height: 455
+        x: 1200
+        y: 600
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -489,12 +489,12 @@ TextureImporter:
       name: boom3_13
       rect:
         serializedVersion: 2
-        x: 1853
-        y: 683
-        width: 480
-        height: 453
+        x: 1800
+        y: 600
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -511,12 +511,12 @@ TextureImporter:
       name: boom3_14
       rect:
         serializedVersion: 2
-        x: 2450
-        y: 681
-        width: 480
-        height: 420
+        x: 2400
+        y: 600
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -533,12 +533,12 @@ TextureImporter:
       name: boom3_15
       rect:
         serializedVersion: 2
-        x: 312
-        y: 494
-        width: 17
-        height: 8
+        x: 0
+        y: 0
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -555,12 +555,12 @@ TextureImporter:
       name: boom3_16
       rect:
         serializedVersion: 2
-        x: 49
-        y: 79
-        width: 472
-        height: 414
+        x: 600
+        y: 0
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -577,12 +577,12 @@ TextureImporter:
       name: boom3_17
       rect:
         serializedVersion: 2
-        x: 934
-        y: 457
-        width: 11
-        height: 10
+        x: 1200
+        y: 0
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -599,12 +599,12 @@ TextureImporter:
       name: boom3_18
       rect:
         serializedVersion: 2
-        x: 1016
-        y: 457
-        width: 20
-        height: 12
+        x: 1800
+        y: 0
+        width: 600
+        height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -617,253 +617,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: boom3_19
-      rect:
-        serializedVersion: 2
-        x: 650
-        y: 81
-        width: 387
-        height: 372
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9ce354bc75b2622d0800000000000000
-      internalID: -3303905620557218103
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boom3_20
-      rect:
-        serializedVersion: 2
-        x: 1083
-        y: 414
-        width: 14
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1cf31ccd0982dc9a0800000000000000
-      internalID: -6211263708429991999
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boom3_21
-      rect:
-        serializedVersion: 2
-        x: 1967
-        y: 383
-        width: 57
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d82dc8eab9a2a7f90800000000000000
-      internalID: -6955199826383547763
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boom3_22
-      rect:
-        serializedVersion: 2
-        x: 1257
-        y: 83
-        width: 364
-        height: 279
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 68dc822022edb3d20800000000000000
-      internalID: 3259442992979168646
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boom3_23
-      rect:
-        serializedVersion: 2
-        x: 1330
-        y: 337
-        width: 65
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 87f0f20895ba460c0800000000000000
-      internalID: -4583350119865315464
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boom3_24
-      rect:
-        serializedVersion: 2
-        x: 1444
-        y: 361
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0ef0be7bdd313b6a0800000000000000
-      internalID: -6434777599587971104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boom3_25
-      rect:
-        serializedVersion: 2
-        x: 1604
-        y: 341
-        width: 58
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9d777bee47e152650800000000000000
-      internalID: 6207401148970137561
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boom3_26
-      rect:
-        serializedVersion: 2
-        x: 1109
-        y: 322
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8b9871de53c364200800000000000000
-      internalID: 163884638754277816
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boom3_27
-      rect:
-        serializedVersion: 2
-        x: 1967
-        y: 96
-        width: 229
-        height: 246
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9469baa0b4004d130800000000000000
-      internalID: 3590495125222692425
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boom3_28
-      rect:
-        serializedVersion: 2
-        x: 1095
-        y: 249
-        width: 10
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 736cd63a88e07f8b0800000000000000
-      internalID: -5118606471463057865
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boom3_29
-      rect:
-        serializedVersion: 2
-        x: 1898
-        y: 247
-        width: 37
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5f78ed9753fbf5a50800000000000000
-      internalID: 6512133822599825397
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e7c83b9dd5ce86b4f970ab21d7ac07c2
     internalID: 0
     vertices: []
     indices: 
@@ -871,7 +629,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":600.0,"y":600.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       boom3_0: 3174005786208677409
       boom3_1: -4956102137351896869
@@ -884,18 +644,7 @@ TextureImporter:
       boom3_16: -340397455367383147
       boom3_17: -5475404683177922187
       boom3_18: -7903796611588256412
-      boom3_19: -3303905620557218103
       boom3_2: 5185321260763336893
-      boom3_20: -6211263708429991999
-      boom3_21: -6955199826383547763
-      boom3_22: 3259442992979168646
-      boom3_23: -4583350119865315464
-      boom3_24: -6434777599587971104
-      boom3_25: 6207401148970137561
-      boom3_26: 163884638754277816
-      boom3_27: 3590495125222692425
-      boom3_28: -5118606471463057865
-      boom3_29: 6512133822599825397
       boom3_3: -4545501095105644766
       boom3_4: -8506884726238877911
       boom3_5: -1778648481925108714

@@ -1,11 +1,12 @@
+using TMPro;
 using UnityEngine;
 
 public class Critter1 : MonoBehaviour
 {
     
     [SerializeField] Sprite[] sprites;
-    [SerializeField] GameObject getZappedEffect;
-    [SerializeField] GameObject burnEffect;
+    ObjectPooler getZappedEffectPool;
+    ObjectPooler burnEffectPool;
     SpriteRenderer sr;
     float moveSpeed;
     Vector3 targetPosition;
@@ -16,7 +17,9 @@ public class Critter1 : MonoBehaviour
     private float moveInterval;
     void Start()
     {
-        sr=GetComponent<SpriteRenderer>();
+        burnEffectPool=GameObject.Find("CritterBurnPool").GetComponent<ObjectPooler>();
+        getZappedEffectPool = GameObject.Find("CritterZapPool").GetComponent<ObjectPooler>();
+        sr =GetComponent<SpriteRenderer>();
         sr.sprite=sprites[Random.Range(0,sprites.Length)];
         moveSpeed=Random.Range(0.5f,3.0f);
         GenerateRandomPosition();
@@ -36,9 +39,10 @@ public class Critter1 : MonoBehaviour
         else
         {
             GenerateRandomPosition();
-            moveInterval = Random.Range(0.1f, 3.0f);
+            moveInterval = Random.Range(0.3f, 2.0f);
             moveTimer = moveInterval;
         }
+        targetPosition -= new Vector3(GameManager.Instance.worldSpeed*Time.deltaTime, 0);
         transform.position = Vector3.MoveTowards(transform.position,
                 targetPosition,
                 moveSpeed * Time.deltaTime);
@@ -62,17 +66,25 @@ public class Critter1 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
+
             
-            Instantiate(getZappedEffect,transform.position,transform.rotation);
-            Destroy(gameObject);
+            GameObject zapEffect = getZappedEffectPool.GetPoolGameObjects();
+            zapEffect.transform.position = transform.position;
+            zapEffect.transform.rotation = transform.rotation;
+            zapEffect.SetActive(true);
+            gameObject.SetActive(false);
             AudioManager.Instance.playModifiedSound(AudioManager.Instance.hit);
             GameManager.Instance.crittierCount++;
         }
         else if (collision.gameObject.CompareTag("Player"))
         {
+
             
-            Instantiate(burnEffect, transform.position, transform.rotation);
-            Destroy(gameObject);
+            GameObject burnEffect = burnEffectPool.GetPoolGameObjects();
+            burnEffect.transform.position = transform.position;
+            burnEffect.transform.rotation = transform.rotation;
+            burnEffect.SetActive(true);
+            gameObject.SetActive(false);
             AudioManager.Instance.playModifiedSound(AudioManager.Instance.hit);
             GameManager.Instance.crittierCount++;
         }

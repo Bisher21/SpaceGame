@@ -15,8 +15,8 @@ public class ObjectSpawner : MonoBehaviour
     [System.Serializable]
     public class Wave
     {
-      
-        public GameObject prefab;
+
+        public ObjectPooler pool;
         public float spawnTimer;
         
         public float spawnInrevale;
@@ -28,10 +28,10 @@ public class ObjectSpawner : MonoBehaviour
 
     void Update()
     {
-       waves[waveNum].spawnTimer += Time.deltaTime*GameManager.Instance.worldSpeed;
-        if (waves[waveNum].spawnTimer >= waves[waveNum].spawnInrevale)
+       waves[waveNum].spawnTimer -= Time.deltaTime*GameManager.Instance.worldSpeed;
+        if (waves[waveNum].spawnTimer <=0)
         {
-            waves[waveNum].spawnTimer = 0;
+            waves[waveNum].spawnTimer += waves[waveNum].spawnInrevale;
             SpawnObject();
         }
         if (waves[waveNum].spawnedObjectCounter >= waves[waveNum].objectsPerWave)
@@ -48,7 +48,11 @@ public class ObjectSpawner : MonoBehaviour
 
     private void SpawnObject()
     {
-        Instantiate(waves[waveNum].prefab, SpawnPostion(), transform.rotation);
+        
+        GameObject spawnedObject = waves[waveNum].pool.GetPoolGameObjects();
+        spawnedObject.transform.position = SpawnPostion();
+        //spawnedObject.transform.rotation=transform.rotation;
+        spawnedObject.SetActive(true);
         waves[waveNum].spawnedObjectCounter++;
     }
     private Vector2 SpawnPostion()

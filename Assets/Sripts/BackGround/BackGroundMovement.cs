@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class BackGroundMovement : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed;
+    [SerializeField]
+    private float movementSpeed;
     float BackGroundImageWidth;
     
     void Start()
@@ -14,7 +15,7 @@ public class BackGroundMovement : MonoBehaviour
     
     void Update()
     {
-        float movex = GameManager.Instance.worldSpeed  * Time.deltaTime;
+        float movex = movementSpeed* GameManager.Instance.worldSpeed  * Time.deltaTime;
         transform.position+= new Vector3(movex, 0);
         if (Mathf.Abs(transform.position.x)- BackGroundImageWidth > 0)
         {

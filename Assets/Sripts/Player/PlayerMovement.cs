@@ -3,6 +3,9 @@ using System.Collections;
 using UnityEditor;
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement Instance;
+    public bool isBoosting;
+
     [SerializeField] private float moveSpeed;
     [SerializeField] private float energy;
     [SerializeField] private float maxEnergy;
@@ -10,12 +13,12 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float health;
     [SerializeField] private float maxHealth;
-    [SerializeField] private GameObject destroyEffect;
     [SerializeField] private ParticleSystem engineEffect;
-    public static PlayerMovement Instance;
+
     
+    private ObjectPooler destroyEffectpool;
     private Vector2 playerDirection;
-    public bool isBoosting;
+    
     
 
     private Rigidbody2D rb;
@@ -31,8 +34,10 @@ public class PlayerMovement : MonoBehaviour
         else
             Instance = this;
     }
+    
     void Start()
     {
+        destroyEffectpool = GameObject.Find("Boom1Pool").GetComponent<ObjectPooler>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
        
@@ -104,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
         {
             engineEffect.Play();
             anim.SetBool("Boosting", true);
-            GameManager.Instance.SetWorldSpeed(5f);
+            GameManager.Instance.SetWorldSpeed(3f);
             isBoosting = true;
         }
         
@@ -119,16 +124,17 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Obstacle"))
+
         {
+            Asteroid asteroid = collision.gameObject.GetComponent<Asteroid>();
+            if (asteroid)
+                asteroid.TakeDamage(1);
             
-            TakeDamage(1);
-        }else if (collision.gameObject.CompareTag("Boss"))
-        {
-            TakeDamage(3);
         }
+
     }
 
-    void TakeDamage(int damage)
+   public void TakeDamage(int damage)
     {
         health-=damage;
         AudioManager.Instance.playSound(AudioManager.Instance.hit);
@@ -140,9 +146,14 @@ public class PlayerMovement : MonoBehaviour
             ExitBoost();
             GameManager.Instance.SetWorldSpeed(0f);
 
+
+
             gameObject.SetActive(false);
-            
-            Instantiate(destroyEffect, transform.position, transform.rotation);
+            GameObject destroyEffect = destroyEffectpool.GetPoolGameObjects();
+            destroyEffect.transform.position=transform.position;
+            destroyEffect.transform.rotation=transform.rotation;
+            destroyEffect.SetActive(true);
+           
             
             GameManager.Instance.GameOver();
             AudioManager.Instance.playSound(AudioManager.Instance.dead);

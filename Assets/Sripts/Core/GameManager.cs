@@ -5,12 +5,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     [SerializeField] public float worldSpeed;
-    [SerializeField] private GameObject boss1;
+    private ObjectPooler boss1Pool;
 
     public int crittierCount;
 
     private void Start()
     {
+        boss1Pool = GameObject.Find("Boss1Pool").GetComponent<ObjectPooler>();
         crittierCount = 0;
     }
     private void Awake()
@@ -30,11 +31,14 @@ public class GameManager : MonoBehaviour
             AudioManager.Instance.playSound(AudioManager.Instance.pauseAndUnpause);
         }
 
-        if (crittierCount > 15)
+        if (crittierCount >= 5)
         {
             crittierCount = 0;
-            Instantiate(boss1,new Vector2(13f,0),Quaternion.Euler(0,0,-90));
-            AudioManager.Instance.playSound(AudioManager.Instance.spawn);
+            GameObject spawnBoss = boss1Pool.GetPoolGameObjects();
+            spawnBoss.transform.position = new Vector2(13f, 0);
+            spawnBoss.transform.rotation = Quaternion.Euler(0, 0, -90);
+            spawnBoss.SetActive(true); 
+            
         }
     }
     public void Pause()

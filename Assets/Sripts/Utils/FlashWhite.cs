@@ -27,4 +27,8 @@ public class FlashWhite : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         sr.material = defaultMaterial;
     }
+    public void Reset()
+    {
+        sr.material = defaultMaterial;
+    }
 }

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Boss1 : MonoBehaviour
 {
+    private ObjectPooler effectDyingPool;
     private float speedX;
     private float speedY;
     private bool charging;
@@ -10,13 +11,30 @@ public class Boss1 : MonoBehaviour
 
     private float switchTimer;
     Animator anim;
-
+    int maxLives=100;
     int lives;
+    int damage=20;
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+        gameObject.SetActive(false);
+    }
+    private void OnEnable()
+    {
+
+        EnterChargeState();
+        lives = maxLives;
+        AudioManager.Instance.playSound(AudioManager.Instance.spawn);
+    }
     void Start()
     {
-        lives = 100;
-        anim = GetComponent<Animator>();
+        effectDyingPool = GameObject.Find("Boom3Pool").
+        GetComponent<ObjectPooler>();
+        lives = maxLives;
+       
+        
         EnterChargeState();
+        AudioManager.Instance.playSound(AudioManager.Instance.spawn);
     }
 
     
@@ -63,7 +81,7 @@ public class Boss1 : MonoBehaviour
         transform.position += new Vector3(moveX, moveY);
         if (transform.position.x < -11)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
     void EnterPatrolState()
@@ -92,16 +110,37 @@ public class Boss1 : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Bullet"))
+        if (collision.gameObject.CompareTag("Obstacle"))
+
         {
-            TakeDamage(0);
+            Asteroid asteroid = collision.gameObject.GetComponent<Asteroid>();
+            if (asteroid)
+                asteroid.TakeDamage(damage);
             
         }
+        else if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
+            if (player)
+                player.TakeDamage(damage);
+
+        }
+
     }
     public void TakeDamage(int damage)
     {
         AudioManager.Instance.playModifiedSound(AudioManager.Instance.hitBoss);
         lives -= damage;
+        if(lives <= 0)
+        {
+            GameObject bossDying = effectDyingPool.GetPoolGameObjects();
+            bossDying.transform.position = transform.position;
+            bossDying.transform.rotation = transform.rotation;
+            bossDying.SetActive(true);
+            AudioManager.Instance.playSound(AudioManager.Instance.dead);
+
+            gameObject.SetActive(false);
+        }
 
     }
 

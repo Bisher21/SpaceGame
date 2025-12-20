@@ -5,7 +5,7 @@ public class ObjectPooler : MonoBehaviour
      public GameObject prefap;
 
     private List<GameObject> pool;
-    private int poolSize=5;
+    [SerializeField]private int poolSize=5;
     void Start()
     {
         CreteGameObjectsPool();

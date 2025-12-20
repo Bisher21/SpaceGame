@@ -3,15 +3,25 @@ using System.Collections;
 public class Asteroid : MonoBehaviour
 {
     
-    [SerializeField] private GameObject ExplosionEffect;
+    private ObjectPooler ExplosionEffectPool;
     [SerializeField] private Sprite[] sprites;
     private SpriteRenderer sr;
     private Rigidbody2D rb;
     private FlashWhite flash;
-     private int lives = 5;
+    private int maxLives;
+    private int lives ;
+    private int damage ;
+
+    private void OnEnable()
+    {
+        lives = maxLives;
+        transform.rotation= Quaternion.identity;
+    }
     void Start()
     {
-      sr = GetComponent<SpriteRenderer>();
+        ExplosionEffectPool = GameObject.Find("Boom2Pool").
+        GetComponent<ObjectPooler>();
+        sr = GetComponent<SpriteRenderer>();
         rb= GetComponent<Rigidbody2D>();
         flash= GetComponent<FlashWhite>();
         sr.sprite= sprites[Random.Range(0,
@@ -21,19 +31,23 @@ public class Asteroid : MonoBehaviour
         rb.linearVelocity=new Vector2 (pushX, pushY);
         float randomScale = Random.Range(0.6f, 1f);
         transform.localScale=new Vector2 (randomScale, randomScale);
+        ExplosionEffectPool.transform.localScale=transform.localScale;
+        maxLives = 5;
+        lives = maxLives;
+        damage = 1;
     }
 
     
   
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")|| collision.gameObject.CompareTag("Bullet"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            TakeDamage(1);
-        }else if (collision.gameObject.CompareTag("Boss"))
-        {
-            TakeDamage(10);
+            PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
+            if (player)
+                player.TakeDamage(damage);
         }
+       
         
     }
     public void TakeDamage(int damage)
@@ -43,9 +57,15 @@ public class Asteroid : MonoBehaviour
         lives-= damage;
         if (lives <= 0)
         {
-            Instantiate(ExplosionEffect, transform.position, transform.rotation);
-            AudioManager.Instance.playSound(AudioManager.Instance.dead);
-            Destroy(gameObject);
+            
+            GameObject explosionEffect = ExplosionEffectPool.GetPoolGameObjects();
+            explosionEffect.transform.position = transform.position;
+            explosionEffect.transform.rotation = transform.rotation;
+            explosionEffect.transform.localScale = transform.localScale;
+            explosionEffect.SetActive(true);
+            AudioManager.Instance.playSound(AudioManager.Instance.asteroidExplosion);
+            flash.Reset();
+            gameObject.SetActive(false);
         }
     }
    
