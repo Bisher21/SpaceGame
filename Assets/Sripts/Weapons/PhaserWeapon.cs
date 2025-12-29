@@ -1,12 +1,11 @@
 using UnityEngine;
 
-public class PhaserWeapon : MonoBehaviour
+public class PhaserWeapon : Weapon
 {
     public static PhaserWeapon Instance;
     [SerializeField] private ObjectPooler bulletpooler;
 
-    public float speed;
-    public int damage;
+   
 
     private void Awake()
     {
@@ -19,11 +18,31 @@ public class PhaserWeapon : MonoBehaviour
 
     public void Shoot()
     {
-        
-       GameObject bullet= bulletpooler.GetPoolGameObjects();
-        bullet.transform.position = transform.position;
-        bullet.SetActive(true);
+
         AudioManager.Instance.playSound(AudioManager.Instance.shoot);
+        for (int i = 0; i < stats[weaponLevel].amount; i++)
+        {
+            float yPos = transform.position.y;
+            GameObject bullet = bulletpooler.GetPoolGameObjects();
+            if (stats[weaponLevel].amount > 1) {
+                float spacing = stats[weaponLevel].range / (stats[weaponLevel].amount - 1);
+                yPos = transform.position.y - (stats[weaponLevel].range / 2) + i * spacing;
+            }
+
+
+            bullet.transform.position = new Vector2(transform.position.x,yPos);
+            bullet.transform.localScale = new Vector2(stats[weaponLevel].size, stats[weaponLevel].size);
+            bullet.SetActive(true);
+            
+
+        }
+        
+    }
+    public void LevelUp()
+    {
+        if (weaponLevel < stats.Count - 1)
+            weaponLevel++;
+
     }
 
 }

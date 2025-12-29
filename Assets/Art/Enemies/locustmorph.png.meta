@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: 85dcccee9e5c53c45bd0597ccd9a71e7
+guid: d645f6599f468334ab350ade9a51a834
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5588965506718041536
-    second: beetlemorph_0
+      213: 987648193118723531
+    second: locustmorph_0
   - first:
-      213: 8176062168316702862
-    second: beetlemorph_1
+      213: -1182288027662524906
+    second: locustmorph_1
   - first:
-      213: -3962547319695902046
-    second: beetlemorph_2
+      213: 746690809680363692
+    second: locustmorph_2
   - first:
-      213: 1408924143864969165
-    second: beetlemorph_3
+      213: 216214826535000004
+    second: locustmorph_3
+  - first:
+      213: -7989817001677814027
+    second: locustmorph_4
+  - first:
+      213: -7408264423918629294
+    second: locustmorph_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,89 +128,177 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: beetlemorph_0
+      name: locustmorph_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 13
-        width: 110
-        height: 101
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0c507d9448eff8d40800000000000000
-      internalID: 5588965506718041536
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: beetlemorph_1
-      rect:
-        serializedVersion: 2
-        x: 130
-        y: 6
-        width: 99
-        height: 110
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e80f6043935377170800000000000000
-      internalID: 8176062168316702862
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: beetlemorph_2
-      rect:
-        serializedVersion: 2
-        x: 241
-        y: 0
-        width: 118
+        x: 0
+        y: 120
+        width: 120
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2aa79db05343209c0800000000000000
-      internalID: -3962547319695902046
+      spriteID: bcdd5e18cc4d4bd00800000000000000
+      internalID: 987648193118723531
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: beetlemorph_3
+      name: locustmorph_1
       rect:
         serializedVersion: 2
-        x: 362
-        y: 4
-        width: 117
-        height: 114
+        x: 120
+        y: 120
+        width: 120
+        height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dc7fa864b018d8310800000000000000
-      internalID: 1408924143864969165
+      spriteID: 61e5af88d4ba79fe0800000000000000
+      internalID: -1182288027662524906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: locustmorph_2
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 120
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca00c04d557cc5a00800000000000000
+      internalID: 746690809680363692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: locustmorph_3
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 120
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c79aca3d36200300800000000000000
+      internalID: 216214826535000004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: locustmorph_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f60e92d4c77e1190800000000000000
+      internalID: -7989817001677814027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: locustmorph_5
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25e8a22d1ce803990800000000000000
+      internalID: -7408264423918629294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: locustmorph_6
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94603556a7310854ab3214587228e8f9
+      internalID: -148083902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: locustmorph_7
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b971b83c950c943940b63ac0ca7db3
+      internalID: 46222873
       vertices: []
       indices: 
       edges: []
@@ -213,7 +307,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 73f17b7a18ef52e42b5f71acebc60673
     internalID: 0
     vertices: []
     indices: 
@@ -221,12 +315,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":120.0,"y":120.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      beetlemorph_0: 5588965506718041536
-      beetlemorph_1: 8176062168316702862
-      beetlemorph_2: -3962547319695902046
-      beetlemorph_3: 1408924143864969165
+      locustmorph_0: 987648193118723531
+      locustmorph_1: -1182288027662524906
+      locustmorph_2: 746690809680363692
+      locustmorph_3: 216214826535000004
+      locustmorph_4: -7989817001677814027
+      locustmorph_5: -7408264423918629294
+      locustmorph_6: -148083902
+      locustmorph_7: 46222873
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -14,6 +14,7 @@ public class Boss1 : MonoBehaviour
     int maxLives=100;
     int lives;
     int damage=20;
+    int experienceToGive = 20;
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -115,7 +116,7 @@ public class Boss1 : MonoBehaviour
         {
             Asteroid asteroid = collision.gameObject.GetComponent<Asteroid>();
             if (asteroid)
-                asteroid.TakeDamage(damage);
+                asteroid.TakeDamage(damage,false);
             
         }
         else if (collision.gameObject.CompareTag("Player"))
@@ -140,6 +141,7 @@ public class Boss1 : MonoBehaviour
             AudioManager.Instance.playSound(AudioManager.Instance.dead);
 
             gameObject.SetActive(false);
+            PlayerMovement.Instance.GetExperience(experienceToGive);
         }
 
     }

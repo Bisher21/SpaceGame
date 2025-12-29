@@ -4,7 +4,8 @@ public class FloatInSpace : MonoBehaviour
 {
     private void Update()
     {
-        float moveX = GameManager.Instance.worldSpeed * Time.deltaTime;
+        float moveX = GameManager.Instance.adjustedworldSpeed;
+            
 
         transform.position += new Vector3(-moveX, 0);
         if (transform.position.x < -11)

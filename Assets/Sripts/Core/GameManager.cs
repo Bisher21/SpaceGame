@@ -4,7 +4,9 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    [SerializeField] public float worldSpeed;
+    public float worldSpeed;
+    public float adjustedworldSpeed;
+
     private ObjectPooler boss1Pool;
 
     public int crittierCount;
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        adjustedworldSpeed= worldSpeed*Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Escape))
         {
 

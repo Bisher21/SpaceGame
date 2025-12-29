@@ -14,16 +14,18 @@ public class AudioManager : MonoBehaviour
     public AudioSource hitBoss;
     public AudioSource dive;
     public AudioSource spawn;
+    public AudioSource beetleHit;
+    public AudioSource beetleDeath;
     private void Awake()
     {
         if (Instance != null)
         {
-            Destroy(gameObject);  // صححها إلى gameObject (بـ g صغيرة)
+            Destroy(gameObject);  
         }
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // ⬅ اختياري: إذا أردت بقاءه بين المشاهد
+            DontDestroyOnLoad(gameObject);
         }
     }
 

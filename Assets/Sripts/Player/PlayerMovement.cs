@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 using UnityEditor;
 public class PlayerMovement : MonoBehaviour
 {
@@ -27,6 +27,14 @@ public class PlayerMovement : MonoBehaviour
 
     private FlashWhite flash;
 
+    [SerializeField] private int experience;
+    [SerializeField] private int currentLevel;
+    [SerializeField] private int maxLevel; 
+    [SerializeField] private List<int> playerLevels;
+
+
+
+
     private void Awake()
     {
         if (Instance != null)
@@ -43,11 +51,19 @@ public class PlayerMovement : MonoBehaviour
        
         flash = GetComponent<FlashWhite>();
 
+        for (int i = playerLevels.Count; i < maxLevel; i++) {
+            playerLevels.Add(Mathf.CeilToInt(playerLevels[playerLevels.Count-1]*1.1f+15));
+        }
+
         energy = maxEnergy;
         UIController.Instance.UpdateEnergySlider(energy, maxEnergy);
 
         health = maxHealth;
         UIController.Instance.UpdateHealthSlider(health, maxHealth);
+
+        experience = 0;
+        UIController.Instance.UpdateExperienceSlider(experience, playerLevels[currentLevel]);
+
     }
 
    
@@ -109,7 +125,7 @@ public class PlayerMovement : MonoBehaviour
         {
             engineEffect.Play();
             anim.SetBool("Boosting", true);
-            GameManager.Instance.SetWorldSpeed(3f);
+            GameManager.Instance.SetWorldSpeed(5f);
             isBoosting = true;
         }
         
@@ -128,8 +144,15 @@ public class PlayerMovement : MonoBehaviour
         {
             Asteroid asteroid = collision.gameObject.GetComponent<Asteroid>();
             if (asteroid)
-                asteroid.TakeDamage(1);
+                asteroid.TakeDamage(1,false);
             
+        }else if (collision.gameObject.CompareTag("Enemy"))
+
+        {
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            if (enemy)
+                enemy.TakeDamage(1);
+
         }
 
     }
@@ -158,6 +181,27 @@ public class PlayerMovement : MonoBehaviour
             GameManager.Instance.GameOver();
             AudioManager.Instance.playSound(AudioManager.Instance.dead);
         }
+    }
+    public void GetExperience(int exp)
+    {
+        experience += exp;
+        UIController.Instance.UpdateExperienceSlider(experience, playerLevels[currentLevel]);
+        if (experience > playerLevels[currentLevel])
+            LevelUp();
+
+    }
+
+    public void LevelUp()
+    {
+        experience -= playerLevels[currentLevel];
+
+        if (currentLevel < maxLevel - 1)
+            currentLevel++;
+        UIController.Instance.UpdateExperienceSlider(experience, playerLevels[currentLevel]);
+        PhaserWeapon.Instance.LevelUp();
+        maxHealth++;
+        health=maxHealth;
+        UIController.Instance.UpdateHealthSlider(health, maxHealth);
     }
    
  

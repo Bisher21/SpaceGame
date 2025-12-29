@@ -12,6 +12,9 @@ public class UIController : MonoBehaviour
     [SerializeField] private TMP_Text healthText;
     [SerializeField] private Slider healthSlider;
 
+    [SerializeField] private TMP_Text experienceText;
+    [SerializeField] private Slider experienceSlider;
+
     public GameObject pausePanel;
 
     private void Awake()
@@ -37,5 +40,14 @@ public class UIController : MonoBehaviour
 
 
         healthText.text = healthSlider.value + "/" + healthSlider.maxValue;
+    }
+
+    public void UpdateExperienceSlider(float currentExperience, float maxExperience)
+    {
+        experienceSlider.maxValue = maxExperience;
+        experienceSlider.value = Mathf.RoundToInt(currentExperience);
+
+
+        experienceText.text = experienceSlider.value + "/" + experienceSlider.maxValue;
     }
 }
