@@ -16,6 +16,9 @@ public class AudioManager : MonoBehaviour
     public AudioSource spawn;
     public AudioSource beetleHit;
     public AudioSource beetleDeath;
+    public AudioSource locusHit;
+    public AudioSource locusDeath;
+    public AudioSource locusCharge;
     private void Awake()
     {
         if (Instance != null)

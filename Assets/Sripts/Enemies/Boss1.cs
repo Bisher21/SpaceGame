@@ -1,46 +1,47 @@
 using UnityEngine;
 
-public class Boss1 : MonoBehaviour
+public class Boss1 : Enemy
 {
-    private ObjectPooler effectDyingPool;
-    private float speedX;
-    private float speedY;
+    
+  
     private bool charging;
 
     private float switchInterval;
 
     private float switchTimer;
-    Animator anim;
-    int maxLives=100;
-    int lives;
-    int damage=20;
-    int experienceToGive = 20;
-    private void Awake()
+    private Animator anim;
+
+    public override void Awake()
     {
+        base.Awake();
         anim = GetComponent<Animator>();
         gameObject.SetActive(false);
     }
-    private void OnEnable()
+    public override void OnEnable()
     {
+        base.OnEnable();
 
         EnterChargeState();
-        lives = maxLives;
-        AudioManager.Instance.playSound(AudioManager.Instance.spawn);
-    }
-    void Start()
-    {
-        effectDyingPool = GameObject.Find("Boom3Pool").
-        GetComponent<ObjectPooler>();
-        lives = maxLives;
-       
         
-        EnterChargeState();
         AudioManager.Instance.playSound(AudioManager.Instance.spawn);
     }
-
-    
-    void Update()
+    public override void Start()
     {
+        base.Start();
+        desrtoyEffectPool = GameObject.Find("Boom3Pool").
+        GetComponent<ObjectPooler>();
+        hitSound = AudioManager.Instance.hitBoss;
+        deathSound = AudioManager.Instance.dead;
+
+
+
+       
+    }
+
+
+    public override void Update()
+    {
+        base.Update();
         float playerPos = PlayerMovement.Instance.transform.position.x;
         if (switchTimer > 0)
         {
@@ -90,7 +91,7 @@ public class Boss1 : MonoBehaviour
         anim.SetBool("charging", false);
         
         speedX = 0;
-        speedY = Random.Range(-2f, 2f);
+        speedY = Random.Range(-1f, 1f);
         switchInterval = Random.Range(5f, 10f);
         switchTimer = switchInterval;
         charging= false;
@@ -101,7 +102,7 @@ public class Boss1 : MonoBehaviour
             AudioManager.Instance.playModifiedSound(AudioManager.Instance.dive);
 
         anim.SetBool("charging", true);
-        speedX = -8f;
+        speedX = -5f;
         speedY = 0;
         switchInterval = Random.Range(0.6f, 1.3f); ;
         switchTimer = switchInterval;
@@ -109,8 +110,9 @@ public class Boss1 : MonoBehaviour
         
 
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    public override void OnCollisionEnter2D(Collision2D collision)
     {
+        base.OnCollisionEnter2D(collision);
         if (collision.gameObject.CompareTag("Obstacle"))
 
         {
@@ -119,31 +121,9 @@ public class Boss1 : MonoBehaviour
                 asteroid.TakeDamage(damage,false);
             
         }
-        else if (collision.gameObject.CompareTag("Player"))
-        {
-            PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
-            if (player)
-                player.TakeDamage(damage);
-
-        }
+        
 
     }
-    public void TakeDamage(int damage)
-    {
-        AudioManager.Instance.playModifiedSound(AudioManager.Instance.hitBoss);
-        lives -= damage;
-        if(lives <= 0)
-        {
-            GameObject bossDying = effectDyingPool.GetPoolGameObjects();
-            bossDying.transform.position = transform.position;
-            bossDying.transform.rotation = transform.rotation;
-            bossDying.SetActive(true);
-            AudioManager.Instance.playSound(AudioManager.Instance.dead);
-
-            gameObject.SetActive(false);
-            PlayerMovement.Instance.GetExperience(experienceToGive);
-        }
-
-    }
+   
 
 }

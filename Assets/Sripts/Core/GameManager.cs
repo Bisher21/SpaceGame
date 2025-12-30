@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
             AudioManager.Instance.playSound(AudioManager.Instance.pauseAndUnpause);
         }
 
-        if (crittierCount >= 5)
+        if (crittierCount >= 20)
         {
             crittierCount = 0;
             GameObject spawnBoss = boss1Pool.GetPoolGameObjects();

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3327836361903109440
+--- !u!1 &5294413717408090454
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3922378352595735151}
-  - component: {fileID: 2674283619208421854}
-  - component: {fileID: 1261854308500982907}
-  - component: {fileID: 1916082673979578135}
-  - component: {fileID: 5751557913142309479}
-  - component: {fileID: 5548711590779510931}
-  - component: {fileID: 8406109891778320829}
+  - component: {fileID: 7806163706913309961}
+  - component: {fileID: 6640627273058637752}
+  - component: {fileID: 359125158117369590}
+  - component: {fileID: 3076677508395162781}
+  - component: {fileID: 4792236050176239036}
+  - component: {fileID: 2625623489855459712}
+  - component: {fileID: 7747193589339044300}
   m_Layer: 12
-  m_Name: Boss1
+  m_Name: Boss2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3922378352595735151
+--- !u!4 &7806163706913309961
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3327836361903109440}
+  m_GameObject: {fileID: 5294413717408090454}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 8.15, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 3, y: -1.3418692, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
---- !u!212 &2674283619208421854
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!212 &6640627273058637752
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3327836361903109440}
+  m_GameObject: {fileID: 5294413717408090454}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -84,28 +84,28 @@ SpriteRenderer:
   m_SortingLayerID: 613696859
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5912800498141821623, guid: 2630aa129e9b4644484996f0057f64f0, type: 3}
+  m_Sprite: {fileID: 7574722205383545943, guid: b7ab9baed6026214a9a82845c49cb94c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.97, y: 3.29}
+  m_Size: {x: 3.5908768, y: 3.27}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1261854308500982907
+--- !u!95 &359125158117369590
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3327836361903109440}
+  m_GameObject: {fileID: 5294413717408090454}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07486e7ad3d6e4d4eb819dff4689082e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 525156ba5b2711a4ebee71fbbe1c9725, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -117,40 +117,13 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!50 &1916082673979578135
-Rigidbody2D:
-  serializedVersion: 5
+--- !u!70 &3076677508395162781
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3327836361903109440}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 50
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!58 &5751557913142309479
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3327836361903109440}
+  m_GameObject: {fileID: 5294413717408090454}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -178,33 +151,46 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.019052008, y: -0.1524161}
-  m_Radius: 1.4735322
---- !u!114 &5548711590779510931
+  m_Offset: {x: 0, y: -0.2}
+  m_Size: {x: 2, y: 3}
+  m_Direction: 0
+--- !u!114 &4792236050176239036
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3327836361903109440}
+  m_GameObject: {fileID: 5294413717408090454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cf8092f560172d449454c3873436faa, type: 3}
+  m_Script: {fileID: 11500000, guid: 5821981723fe2c5469823dde9eba64dc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Boss1
-  damage: 20
-  lives: 0
-  maxLives: 10
-  experienceToGive: 20
---- !u!114 &8406109891778320829
+  m_EditorClassIdentifier: Assembly-CSharp::FloatInSpace
+--- !u!114 &2625623489855459712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3327836361903109440}
+  m_GameObject: {fileID: 5294413717408090454}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34f90745d5fc670439d17badf8fd795e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlashWhite
+--- !u!114 &7747193589339044300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5294413717408090454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f3681468150a549961c807701cb38e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Boss2
+  damage: 20
+  lives: 0
+  maxLives: 200
+  experienceToGive: 30
